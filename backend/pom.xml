@@ -8,7 +8,7 @@
         <version>2.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>de.magnus</groupId>
+    <groupId>de.magnusschengel</groupId>
     <artifactId>quotywood</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>quotywood</name>
