@@ -60,5 +60,5 @@ jobs:
           name: quotywood.jar
           path: backend/target
       - run: heroku container:login
-      - run: heroku container:push web -a quotywood3
-      - run: heroku container:release web -a quotywood3
+      - run: heroku container:push web -a quotywood
+      - run: heroku container:release web -a quotywood
