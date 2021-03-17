@@ -1,5 +1,4 @@
-name: Deploy github bingo master
-
+name: Deploy quotywood
 on:
   push:
     branches:
