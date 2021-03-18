@@ -1,22 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+        <h1>Who Said it?</h1>
+
+        <h3>Quote / Question</h3>
+        <p>Choose Answer</p>
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <button> A </button>
+          <button> B </button>
+          </p>
+        <p>
+          <button> C </button>
+          <button> D </button>
+
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <p><button>lock answer, next quote </button></p>
+
+
+
       </header>
     </div>
   );
