@@ -1,5 +1,3 @@
-import ReactDOM from 'react-dom'
-import ButtonAnswerChoices from "./ButtonAnswerChoices"
 
 
 function ButtonSaveAnswer(){
