@@ -7,7 +7,7 @@ function ButtonSaveAnswer(){
 
 
     return (
-    <p><button>lock answer  </button></p>
+    <button>lock answer  </button>
     )
 }
 

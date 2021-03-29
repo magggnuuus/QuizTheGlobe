@@ -23,9 +23,7 @@ function App() {
 
 
 
-                <ButtonSaveAnswer/>
-
-                <ButtonNextQuestion/>
+                <p><ButtonSaveAnswer/><ButtonNextQuestion/></p>
 
 
             </header>
