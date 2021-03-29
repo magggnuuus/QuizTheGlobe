@@ -10,7 +10,7 @@ const dae = "dee";
 
 
 function ButtonAnswerChoices() {
-   var [answers, setAnswers] = useState([ahh, bee, cee, dae])
+   var [answers /*, setAnswers */ ] = useState([ahh, bee, cee, dae])
     answers = answers.sort(() => Math.random() - 0.5)
 
   //  const [lockedAnswer, setLockedAnswer] = useState("")
