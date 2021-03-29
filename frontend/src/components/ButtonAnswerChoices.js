@@ -13,9 +13,9 @@ function ButtonAnswerChoices() {
    var [answers, setAnswers] = useState([ahh, bee, cee, dae])
     answers = answers.sort(() => Math.random() - 0.5)
 
-    const [lockedAnswer, setLockedAnswer] = useState("")
+  //  const [lockedAnswer, setLockedAnswer] = useState("")
     const [answerId, setAnswerId] = useState(1)
-    const [selected, setSelected] = useState(false)
+  //  const [selected, setSelected] = useState(false)
 
 
     function setId() {
