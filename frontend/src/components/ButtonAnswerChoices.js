@@ -2,10 +2,10 @@ import ButtonAnswer from "./ButtonAnswer";
 import {useState} from "react"
 
 // a b c d als antwortmöglichkeiten definieren. also input von ner api
-const ahh = Math.random().toString(36).substr(2, 5);
-const bee = Math.random().toString(36).substr(2, 5);
-const cee = Math.random().toString(36).substr(2, 5);
-const dae = Math.random().toString(36).substr(2, 5);
+const ahh = "aah";
+const bee = "bee";
+const cee = "cee";
+const dae = "dee";
 
 
 
@@ -28,17 +28,17 @@ function ButtonAnswerChoices() {
         )
     }
 
-   function onClick() {
+/*   function onClick() {
         setSelected(true)
 
-    }
+    } */
 
 
 
 
     return (
         <div>
-            {answers.map(answer => <ButtonAnswer id={setId} onClick={onClick}  key={setId}
+            {answers.map(answer => <ButtonAnswer id={setId}  key={setId}
                                                  AntwortMoeglichkeit={answer}/>)}
         </div>
     )

@@ -8,7 +8,7 @@ function ButtonNextQuestion(){
 
     return (
 
-        <button id="text" > Next Question </button>)
+        <button> Next Question </button>)
 
 
 

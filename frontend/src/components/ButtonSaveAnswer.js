@@ -9,7 +9,7 @@ function ButtonSaveAnswer(){
 
 
     return (
-    <p><button onClick={ButtonAnswerChoices}>lock answer  </button></p>
+    <p><button>lock answer  </button></p>
     )
 }
 
