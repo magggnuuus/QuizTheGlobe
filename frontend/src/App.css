@@ -14,19 +14,19 @@
 }
 
 .App-header {
-  background-color: #68829e;
+  background-color: #a1be95;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #92aac7;
 }
 button {
   background-color: blueviolet;
   border: none;
-  color: white;
+  color: #92aac7;
   padding: 80px;
   text-align: center;
   text-decoration: none;
@@ -47,15 +47,4 @@ button:hover {
   --p: 0%
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

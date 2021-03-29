@@ -1,33 +1,34 @@
-
 import './App.css';
+import ButtonNextQuestion from "./components/ButtonNextQuestion";
+import ShowQuestion from "./components/ShowQuestion";
+import ButtonAnswerChoices from "./components/ButtonAnswerChoices";
+import ButtonSaveAnswer from "./components/ButtonSaveAnswer";
+
+
 
 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
 
-        <h1>Who Said it?</h1>
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>Quiz about?!</h1>
 
-        <h3>Quote / Question</h3>
-        <p>Choose Answer</p>
+                <ShowQuestion/>
 
-        <p>
-          <button> A </button>
-          <button> B </button>
-          </p>
-        <p>
-          <button> C </button>
-          <button> D </button>
+                <ButtonAnswerChoices/>
 
-        </p>
-
-        <p><button>lock answer, next quote </button></p>
+                
 
 
 
-      </header>
+                <ButtonSaveAnswer/>
+
+                <ButtonNextQuestion/>
+
+
+            </header>
     </div>
   );
 }
