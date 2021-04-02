@@ -18,7 +18,9 @@ public class ApiCountryData {
     private String population;
     //  private List<String> topLevelDomain;
     //  private List<String> borders; braucht neue if verschachtelung (inseln) if no boarder = island
-
+// public Optional<User> getUserByUsername(String username) {
+//        return userDb.findById(username);
+//    }
 
 }
 
