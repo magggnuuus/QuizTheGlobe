@@ -1,7 +1,7 @@
 package de.magnus.demo.db;
 
 
-import de.magnus.demo.model.User;
+import org.apache.catalina.User;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
