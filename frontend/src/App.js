@@ -1,31 +1,28 @@
 import './App.css';
-import ButtonNextQuestion from "./components/ButtonNextQuestion";
-import ShowQuestion from "./components/ShowQuestion";
-import ButtonAnswerChoices from "./components/ButtonAnswerChoices";
-import ButtonSaveAnswer from "./components/ButtonSaveAnswer";
-import AddNewUser from "./components/InputFormForRanking";
+import {useState} from "react";
+import Game from "./pages/Game";
+import UserName from "./pages/UserName";
+import styled from "styled-components/macro";
+import Header from "./components/Header";
 
 
 function App() {
-
+    const [name, setName] = useState();
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Around the World</h1>
-
-                <ShowQuestion/>
-
-                <ButtonAnswerChoices/>
-
-
-                <p><ButtonSaveAnswer/><ButtonNextQuestion/></p>
-
-                <AddNewUser/>
+        <Center>
+            <Header/>
+            {name && <Game/>}
+            {!name && <UserName setName={setName}/>}
+        </Center>
+    )
 
 
-            </header>
-        </div>
-    );
 }
+
+const Center = styled.div`
+text-align: center;
+ font-size: calc(10px + 2vmin);
+    color: #92aac7;
+`
 
 export default App;

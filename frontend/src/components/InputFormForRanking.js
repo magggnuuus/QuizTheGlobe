@@ -6,7 +6,7 @@ export default function AddNewUser({onAdd}) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!name) {
+        if (!name || name.length >= 20) {
             return
         }
         onAdd(name)
@@ -18,9 +18,9 @@ export default function AddNewUser({onAdd}) {
             <input
                 type="text"
                 value={name}
-                onChange={({target}) => setName(target.value)}
+                onChange={event => setName(event.target.value)}
             />
-            <button disabled={!name} type="submit">
+            <button disabled={name.length <= 20 && name.length <= 2} type="submit">
                 Add
             </button>
         </Form>
@@ -38,17 +38,9 @@ const Form = styled.form`
     border-radius: 10px;
     padding: 8px;
     margin: 8px;
-  }
-
-  button {
-    font-size: 1em;
-    font-color: #fff;
-    flex-grow: 0.2;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    border-width: 2px;
-    border-radius: 10px;
-    padding: 8px;
-    margin: 8px;
-  }
+    font-size : 28px;
+      }
+   
+   
 `
+

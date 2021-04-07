@@ -1,17 +1,18 @@
-import React from "react"
+import React from 'react';
 
-function ButtonNextQuestion(){
+function ButtonNextQuestion({changeState}) {
 
+    //  const [ /*answers */, setAnswers] = useState("")
 
-
-// render/reload ShowQuestion and answerbuttons and show right answer
 
     return (
+        <div>
 
-        <button> Next Question </button>)
-
-
-
+            <button onClick={changeState} type="button">
+                Next Question
+            </button>
+        </div>
+    );
 }
 
-export default ButtonNextQuestion
+export default ButtonNextQuestion;
