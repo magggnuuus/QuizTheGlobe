@@ -11,9 +11,10 @@ export default function Game() {
     const [isLoaded, setIsLoaded] = useState(false)
     const [chosen, setChosen] = useState("")
     const [countryName, setCountryName] = useState("")
-    const [answerId, setAnswerId] = useState(1)
+    const [rightAnswer, setRightAnswer] = useState("")
     const [countRight, setCountRight] = useState(0);
     const [countWrong, setCountWrong] = useState(0);
+    const [countryFlag, setCountryFlag] = useState("")
 
 
     useEffect(() => {
@@ -29,79 +30,57 @@ export default function Game() {
         if (gameData.length > 0) {
 
             const shuffled = gameData.sort(() => 0.5 - Math.random());
-            let selected = shuffled.slice(0, 4);
+            const selected = shuffled.slice(0, 4);
             const categories = ["capital", "population", "topLevelDomain"]
-            let chooseCategory = categories.sort(() => 0.5 - Math.random());
-            let chosen = chooseCategory[0];
+            const chooseCategory = categories.sort(() => 0.5 - Math.random());
+            const chosen = chooseCategory[0];
             setChosen(chooseCategory[0])
-            let countryName = selected[0].name;
+
+            const countryFlag = selected[0].flag;
+            setCountryFlag(selected[0].flag);
+
             setCountryName(selected[0].name);
-            let rightAnswer = selected[0][chosen];
-            let wrongAnswer1 = selected[1][chosen];
-            let wrongAnswer2 = selected[2][chosen];
-            let wrongAnswer3 = selected[3][chosen];
-            let shuffledAnswers = [rightAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3]
+            setRightAnswer(selected[0][chosen]);
+            console.log(countryFlag)
+            const wrongAnswer1 = selected[1][chosen];
+            const wrongAnswer2 = selected[2][chosen];
+            const wrongAnswer3 = selected[3][chosen];
+
+            const shuffledAnswers = [selected[0][chosen], wrongAnswer1, wrongAnswer2, wrongAnswer3]
             shuffledAnswers.sort(() => 0.5 - Math.random());
-
-            // Random? function shuffleArray(array) {
-            //     for (var i = array.length - 1; i > 0; i--) {
-            //         var j = Math.floor(Math.random() * (i + 1));
-            //         var temp = array[i];
-            //         array[i] = array[j];
-            //         array[j] = temp;
-            //     }
-            // }   https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-
-            console.log(countryName)
-            console.log(rightAnswer);
-            console.log(wrongAnswer1);
-            console.log(wrongAnswer2);
-            console.log(wrongAnswer3);
             setAnswers(shuffledAnswers)
-            console.log("rightanswer " + rightAnswer)
             setIsLoaded(true)
 
         }
     }, [gameData])
 
-    const changeState = () => {
+    const loadNewQuestion = () => {
         setIsLoaded(false);
     }
 
-    function setId() {
-        const id = answerId
-        setAnswerId(answerId + 1)
-        return (
-            id
-        )
-    }
 
-    function onClick() {
-        console.log(rightAnswer)
-        if (rightAnswer === ButtonAnswer.textContent) {
+    function checkUserAnswer(answer) {
+        if (rightAnswer === answer) {
             setCountRight(countRight + 1);
 
         } else {
             setCountWrong(countWrong + 1);
         }
-        return (
-            <>
-            </>
-        )
+
     }
 
 
     return (
         <>
-            <Question chosen={chosen} countryName={countryName}/>
+            <Question chosen={chosen} countryName={countryName} countryFlag={countryFlag}/>
             <div>
-                {answers?.map(answer => <ButtonAnswer onClick={onClick} id={setId}
-                                                      key={setId}
-                                                      AntwortMoeglichkeit={answer}/>)}
+                {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer}
+                                                      key={answer}
+                                                      answer={answer}/>)}
             </div>
             <Counter countRight={countRight} countWrong={countWrong}/>
 
-            <ButtonNextQuestion changeState={changeState}/>
+            <ButtonNextQuestion loadNewQuestion={loadNewQuestion}/>
         </>
     )
 }

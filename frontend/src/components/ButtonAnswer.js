@@ -1,9 +1,7 @@
-
-export default function ButtonAnswer ({AntwortMoeglichkeit, selected, onClick}) {
-
+export default function ButtonAnswer({answer, onClick}) {
 
 
     return (
-        <button onClick={onClick}> {AntwortMoeglichkeit} </button>
+        <button onClick={() => onClick(answer)}> {answer} </button>
     )
 }

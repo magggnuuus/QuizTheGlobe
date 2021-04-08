@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ButtonNextQuestion({changeState}) {
+function ButtonNextQuestion({loadNewQuestion}) {
 
     //  const [ /*answers */, setAnswers] = useState("")
 
@@ -8,7 +8,7 @@ function ButtonNextQuestion({changeState}) {
     return (
         <div>
 
-            <button onClick={changeState} type="button">
+            <button onClick={loadNewQuestion} type="button">
                 Next Question
             </button>
         </div>

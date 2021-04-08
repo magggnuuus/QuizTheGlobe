@@ -16,7 +16,7 @@ public class ApiCountryData {
     private String name;
     private String capital;
     //  private String subregion;
-    // private String flag;
+    private String flag;
     private String population;
     private List<String> topLevelDomain;
     // private List<String> borders;

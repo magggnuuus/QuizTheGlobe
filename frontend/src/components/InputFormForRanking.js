@@ -32,7 +32,9 @@ const Form = styled.form`
   display: flex;
 
   input {
-    flex-grow: 1;
+    flex-grow: 0,5;
+    text-align: center;
+    align: center;
     border-color: var(--primary-color);
     border-width: 2px;
     border-radius: 10px;
@@ -40,7 +42,5 @@ const Form = styled.form`
     margin: 8px;
     font-size : 28px;
       }
-   
-   
 `
 
