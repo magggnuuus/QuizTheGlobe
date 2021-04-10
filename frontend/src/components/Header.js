@@ -22,7 +22,7 @@ const Logoimg = styled.img`
     align-self: center;
     border-radius: 4px;
     padding: 5px;
-    width: 200px;
+    width: 180px;
 }
 @keyframes rotation {
   50% {

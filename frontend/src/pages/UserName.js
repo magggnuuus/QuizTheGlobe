@@ -1,5 +1,6 @@
 import AddNewUser from "../components/InputFormForRanking";
 
+
 export default function UserName({setName}) {
     return (
         <>

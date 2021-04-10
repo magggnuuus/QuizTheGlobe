@@ -1,23 +1,22 @@
 import styled from "styled-components/macro";
 
-export default function ButtonAnswer({answer, onClick}) {
+export default function ButtonAnswer({answer, onClick, disabled}) {
 
 
     return (
-        <FunkyButton onClick={() => onClick(answer)}> {answer} </FunkyButton>
+        <FunkyButton disabled={disabled} onClick={() => onClick(answer)}> {answer} </FunkyButton>
     )
 }
 
 const FunkyButton = styled.button`
-
+width: 50%;
       background-color: blueviolet;
     border: none;
     color: black;
     padding: 25px;
-   margin: 25px;
     text-align: center;
     text-decoration: none;
-    display: 11/2;
+    
     font-size: 28px;
     background: linear-gradient(currentColor 0 0) var(--p, 100%) 0,
     linear-gradient(currentColor 0 0) 0 var(--d, 0),
@@ -33,8 +32,7 @@ const FunkyButton = styled.button`
 }
 
 &:disabled {
-    color: grey;
-    opacity: 0.1;
+    
     cursor: default;
 }
     `

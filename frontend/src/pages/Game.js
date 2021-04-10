@@ -4,6 +4,7 @@ import getGameData from "../service/apiService";
 import ButtonAnswer from "../components/ButtonAnswer";
 import Question from "../components/Question";
 import Counter from "../components/Counter";
+import styled from "styled-components/macro";
 
 export default function Game() {
     const [gameData, setGameData] = useState([]);
@@ -15,7 +16,8 @@ export default function Game() {
     const [countRight, setCountRight] = useState(0);
     const [countWrong, setCountWrong] = useState(0);
     const [countryFlag, setCountryFlag] = useState("");
-    //   const [disabled, setDisabled] = useState(true);
+    const [disabled, setDisabled] = useState(false);
+    const [nextQuestionDisabled, setNextQuestionDisabled] = useState(true);
 
 
     useEffect(() => {
@@ -51,6 +53,7 @@ export default function Game() {
             shuffledAnswers.sort(() => 0.5 - Math.random());
             setAnswers(shuffledAnswers)
             setIsLoaded(true)
+            setDisabled(false)
 
         }
     }, [gameData])
@@ -59,13 +62,17 @@ export default function Game() {
         setIsLoaded(false);
     }
 
-
     function checkUserAnswer(answer) {
         if (rightAnswer === answer) {
             setCountRight(countRight + 1);
+            setDisabled(true);
+            setNextQuestionDisabled(false);
 
         } else {
             setCountWrong(countWrong + 1);
+            setDisabled(true);
+            setNextQuestionDisabled(false);
+
         }
     }
 
@@ -73,16 +80,31 @@ export default function Game() {
     return (
         <>
             <Question chosen={chosen} countryName={countryName} countryFlag={countryFlag}/>
-            <div>
-                {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer}
-                                                      key={answer}
-                                                      answer={answer}/>)}
-            </div>
+            <ContainerButton>
+                <ButtonAnswers>
+                    {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer} disabled={disabled}
+                                                          key={answer}
+                                                          answer={answer}/>)}
+                </ButtonAnswers>
+            </ContainerButton>
 
 
-            <ButtonNextQuestion
-                loadNewQuestion={loadNewQuestion}/>
+            <ButtonNextQuestion disabled={nextQuestionDisabled}
+
+                                loadNewQuestion={loadNewQuestion}/>
             <Counter countRight={countRight} countWrong={countWrong}/>
         </>
     )
 }
+
+const ContainerButton = styled.div`
+display: flex;
+justify-content: center;`
+
+const ButtonAnswers = styled.div`
+
+    display : flex;
+    width: 400px;
+    flex-wrap: wrap;
+    
+    `

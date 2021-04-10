@@ -23,7 +23,7 @@ export default function AddNewUser({onAdd}) {
 
 
             <FunkyButton disabled={name.length <= 20 && name.length <= 2} type="submit">
-                Add
+                Add user
             </FunkyButton>
 
         </Form>
@@ -53,6 +53,12 @@ justify-content: center;
 `
 
 const FunkyButton = styled.button`
+flex-grow: 0,6;
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+
+
       background-color: blueviolet;
       margin: 25px;
     border: none;
@@ -60,7 +66,7 @@ const FunkyButton = styled.button`
     padding: 40px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    
     font-size: 28px;
     background: linear-gradient(currentColor 0 0) var(--p, 100%) 0,
     linear-gradient(currentColor 0 0) 0 var(--d, 0),

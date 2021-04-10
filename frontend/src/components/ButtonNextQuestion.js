@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components/macro";
 
-export default function ButtonNextQuestion({loadNewQuestion}) {
+export default function ButtonNextQuestion({loadNewQuestion, nextQuestionDisabled}) {
 
     return (
         <div>
-            <FunkyButton onClick={loadNewQuestion} type="button"><h2>
+            <FunkyButton onClick={loadNewQuestion} disabled={nextQuestionDisabled} type="button"><h2>
                 Next Question</h2>
             </FunkyButton>
         </div>
@@ -14,7 +14,7 @@ export default function ButtonNextQuestion({loadNewQuestion}) {
 
 const FunkyButton = styled.button`
       background-color: blueviolet;
-      margin: 25px;
+      margin: 10px;
     border: none;
     color: #92aac7
     padding: 40px;
