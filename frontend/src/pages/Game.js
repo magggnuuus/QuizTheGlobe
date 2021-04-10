@@ -15,7 +15,7 @@ export default function Game() {
     const [countRight, setCountRight] = useState(0);
     const [countWrong, setCountWrong] = useState(0);
     const [countryFlag, setCountryFlag] = useState("");
-    const [disabled, setDisabled] = useState(true);
+    //   const [disabled, setDisabled] = useState(true);
 
 
     useEffect(() => {
