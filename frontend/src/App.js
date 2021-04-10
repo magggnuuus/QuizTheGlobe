@@ -21,8 +21,8 @@ function App() {
 
 const Center = styled.div`
 text-align: center;
- font-size: calc(10px + 2vmin);
-    color: #92aac7;
+ font-size: calc(11px + 2vmin);
+    color: Blue back;
 `
 
 export default App;

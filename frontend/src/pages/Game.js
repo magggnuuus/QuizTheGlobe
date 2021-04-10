@@ -14,7 +14,8 @@ export default function Game() {
     const [rightAnswer, setRightAnswer] = useState("")
     const [countRight, setCountRight] = useState(0);
     const [countWrong, setCountWrong] = useState(0);
-    const [countryFlag, setCountryFlag] = useState("")
+    const [countryFlag, setCountryFlag] = useState("");
+    const [disabled, setDisabled] = useState(true);
 
 
     useEffect(() => {
@@ -66,7 +67,6 @@ export default function Game() {
         } else {
             setCountWrong(countWrong + 1);
         }
-
     }
 
 
@@ -78,9 +78,11 @@ export default function Game() {
                                                       key={answer}
                                                       answer={answer}/>)}
             </div>
-            <Counter countRight={countRight} countWrong={countWrong}/>
 
-            <ButtonNextQuestion loadNewQuestion={loadNewQuestion}/>
+
+            <ButtonNextQuestion
+                loadNewQuestion={loadNewQuestion}/>
+            <Counter countRight={countRight} countWrong={countWrong}/>
         </>
     )
 }

@@ -1,28 +1,28 @@
 import Flag from "./Flag";
+import styled from "styled-components/macro";
 
 export default function Question({chosen, countryName, countryFlag}) {
-
-
-    console.log("2", countryFlag)
 
     if
     (chosen === "capital") {
         return (
-            <>
-                <h1> What's the capital of {countryName}? </h1>
+            <ContainerQuestion>
+                <h2> What's the capital of {countryName}? </h2>
                 <Flag countryFlag={countryFlag}/>
-            </>)
+            </ContainerQuestion>
+        )
     } else if (chosen === "topLevelDomain") {
         return (
-            <>
-                <h1> What's the topleveldomain of {countryName} ?</h1>
+            <ContainerQuestion>
+                <h2> What's the topleveldomain of {countryName} ?</h2>
                 <Flag countryFlag={countryFlag}/>
-            </>)
+            </ContainerQuestion>)
     } else if (chosen === "population") {
-        return <>
-            <h1> What's the number of citizens in {countryName} ? </h1>
+        return <ContainerQuestion>
+            <h2> What's the number of citizens in {countryName} ? </h2>
             <Flag countryFlag={countryFlag}/>
-        </>
+        </ContainerQuestion>
+
 
     } else {
         return (
@@ -32,5 +32,12 @@ export default function Question({chosen, countryName, countryFlag}) {
 }
 
 
-
-
+const ContainerQuestion = styled.div`
+border-box: 5px;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+height: 250px;
+`

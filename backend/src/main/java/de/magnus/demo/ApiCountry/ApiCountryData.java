@@ -19,7 +19,7 @@ public class ApiCountryData {
     private String flag;
     private String population;
     private List<String> topLevelDomain;
-    // private List<String> borders;
+    // to be added private List<String> borders;
 }
 
 
