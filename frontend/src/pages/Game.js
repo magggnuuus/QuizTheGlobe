@@ -104,7 +104,7 @@ export default function Game() {
                 <ButtonNextQuestion disabled={nextQuestionDisabled}
                                     loadNewQuestion={loadNewQuestion}/>
 
-                <p hidden={visible}>The answer is {rightAnswer} </p>
+                <div hidden={visible}>The right answer is {rightAnswer} </div>
                 <Counter countRight={countRight} countWrong={countWrong}/>
             </>
         )

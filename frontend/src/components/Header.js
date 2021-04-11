@@ -18,7 +18,7 @@ const Logoimg = styled.img`
 
    animation: rotation 2s;
    animation-duration: 2s;
-
+margin: 5px;
     align-self: center;
     border-radius: 4px;
     padding: 5px;

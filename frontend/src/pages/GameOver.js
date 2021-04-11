@@ -5,15 +5,25 @@ export default function GameOver({countRight}, {Game}) {
 
     return (
         <>
+            <header/>
             <h1>Game over</h1>
-            <p>You gave {countRight} right Answers</p>
-            <FunkyButton>
-                <a href="http://quiztheglobe.herokuapp.com/">Play Again</a>
-            </FunkyButton>
+            <Middle>
+                <p>You gave {countRight} right answers</p>
+                <FunkyButton>
+                    <a href="http://quiztheglobe.herokuapp.com/">Play Again</a>
+                </FunkyButton>
+            </Middle>
 
         </>
     )
 }
+const Middle = styled.div`
+
+justify-content: center;
+align-text: center;
+text-decoration: none;
+`
+
 
 const FunkyButton = styled.button`
       background-color: blueviolet;

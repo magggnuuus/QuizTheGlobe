@@ -23,7 +23,7 @@ export default function AddNewUser({onAdd}) {
 
 
             <FunkyButton disabled={user.length <= 20 && user.length <= 2} type="submit">
-                Add user
+                Start Quiz
             </FunkyButton>
 
         </Form>

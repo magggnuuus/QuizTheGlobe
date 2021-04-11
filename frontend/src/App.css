@@ -1,6 +1,8 @@
 
 body {
-    background-color: palegreen;
+    transition: background-color 3s ease;
+    background-image: linear-gradient(to left top, #6bc8d1, #5dd0cd, #59d7c4, #61deb5, #74e3a3, #76e6a4, #78eaa6, #7aeda7, #67f0bf, #59f2d6, #56f4ea, #5ff4fb);
+
 
 }
 
