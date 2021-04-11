@@ -2,14 +2,14 @@ import {useState} from 'react'
 import styled from "styled-components/macro";
 
 export default function AddNewUser({onAdd}) {
-    const [name, setName] = useState('')
+    const [user, setName] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (!name || name.length >= 20) {
+        if (!user || user.length >= 20) {
             return
         }
-        onAdd(name)
+        onAdd(user)
         setName('')
     }
 
@@ -17,12 +17,12 @@ export default function AddNewUser({onAdd}) {
         <Form onSubmit={handleSubmit}>
             <input
                 type="text"
-                value={name}
+                value={user}
                 onChange={event => setName(event.target.value)}
             />
 
 
-            <FunkyButton disabled={name.length <= 20 && name.length <= 2} type="submit">
+            <FunkyButton disabled={user.length <= 20 && user.length <= 2} type="submit">
                 Add user
             </FunkyButton>
 

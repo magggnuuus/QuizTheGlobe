@@ -25,8 +25,8 @@ export default function RankingUserList() {
             </div>
 
             <ul>
-                {list.map((name) => (
-                    <li key={name.id}>{name.name}</li>
+                {list.map((user) => (
+                    <li key={name.id}>{user.name}</li>
                 ))}
             </ul>
         </div>

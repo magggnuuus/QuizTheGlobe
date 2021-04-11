@@ -1,9 +1,10 @@
 import ButtonNextQuestion from "../components/ButtonNextQuestion";
 import React, {useEffect, useState} from "react";
-import getGameData from "../service/apiService";
+import getGameData from "../service/ApiService";
 import ButtonAnswer from "../components/ButtonAnswer";
 import Question from "../components/Question";
 import Counter from "../components/Counter";
+import GameOver from "./GameOver";
 import styled from "styled-components/macro";
 
 export default function Game() {
@@ -73,28 +74,35 @@ export default function Game() {
             setDisabled(true);
             setNextQuestionDisabled(false);
 
+
         }
     }
 
-
-    return (
-        <>
-            <Question chosen={chosen} countryName={countryName} countryFlag={countryFlag}/>
-            <ContainerButton>
-                <ButtonAnswers>
-                    {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer} disabled={disabled}
-                                                          key={answer}
-                                                          answer={answer}/>)}
-                </ButtonAnswers>
-            </ContainerButton>
+    if (countWrong >= 5) {
+        return (<> <GameOver countRight={countRight}/>
+        </>)
+    } else {
 
 
-            <ButtonNextQuestion disabled={nextQuestionDisabled}
+        return (
+            <>
+                <Question chosen={chosen} countryName={countryName} countryFlag={countryFlag}/>
+                <ContainerButton>
+                    <ButtonAnswers>
+                        {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer} disabled={disabled}
+                                                              key={answer}
+                                                              answer={answer}/>)}
+                    </ButtonAnswers>
+                </ContainerButton>
 
-                                loadNewQuestion={loadNewQuestion}/>
-            <Counter countRight={countRight} countWrong={countWrong}/>
-        </>
-    )
+
+                <ButtonNextQuestion disabled={nextQuestionDisabled}
+
+                                    loadNewQuestion={loadNewQuestion}/>
+                <Counter countRight={countRight} countWrong={countWrong}/>
+            </>
+        )
+    }
 }
 
 const ContainerButton = styled.div`
@@ -103,8 +111,8 @@ justify-content: center;`
 
 const ButtonAnswers = styled.div`
 
-    display : flex;
-    width: 400px;
-    flex-wrap: wrap;
-    
-    `
+display : flex;
+width: 400px;
+flex-wrap: wrap;
+
+`
