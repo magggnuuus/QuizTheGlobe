@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>de.magnusschengel</groupId>
-    <artifactId>quotywood</artifactId>
+    <artifactId>quiztheglobe</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>quiztheglobe</name>
     <description>Demo project for Spring Boot</description>
@@ -43,7 +43,7 @@
     </dependencies>
 
     <build>
-        <finalName>quotywood</finalName>
+        <finalName>quiztheglobe</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
