@@ -1,3 +1,6 @@
+a:link {
+    text-decoration: none;
+}
 
 body {
     transition: background-color 3s ease;
