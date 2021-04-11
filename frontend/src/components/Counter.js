@@ -18,4 +18,5 @@ export default function Counter({countRight, countWrong}) {
 
 const CountContainer = styled.div`
     font-size: 60px;
+    
 `

@@ -19,6 +19,7 @@ export default function Game() {
     const [countryFlag, setCountryFlag] = useState("");
     const [disabled, setDisabled] = useState(false);
     const [nextQuestionDisabled, setNextQuestionDisabled] = useState(true);
+    const [visible, setVisible] = useState("hidden")
 
 
     useEffect(() => {
@@ -55,6 +56,7 @@ export default function Game() {
             setAnswers(shuffledAnswers)
             setIsLoaded(true)
             setDisabled(false)
+            setVisible("hidden")
 
         }
     }, [gameData])
@@ -73,13 +75,14 @@ export default function Game() {
             setCountWrong(countWrong + 1);
             setDisabled(true);
             setNextQuestionDisabled(false);
+            setVisible("");
 
 
         }
     }
 
-    if (countWrong >= 5) {
-        return (<> <GameOver countRight={countRight}/>
+    if (countWrong >= 3) {
+        return (<> <GameOver onClick={Game} countRight={countRight}/>
         </>)
     } else {
 
@@ -89,7 +92,9 @@ export default function Game() {
                 <Question chosen={chosen} countryName={countryName} countryFlag={countryFlag}/>
                 <ContainerButton>
                     <ButtonAnswers>
-                        {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer} disabled={disabled}
+                        {answers?.map(answer => <ButtonAnswer onClick={checkUserAnswer}
+
+                                                              disabled={disabled}
                                                               key={answer}
                                                               answer={answer}/>)}
                     </ButtonAnswers>
@@ -97,8 +102,9 @@ export default function Game() {
 
 
                 <ButtonNextQuestion disabled={nextQuestionDisabled}
-
                                     loadNewQuestion={loadNewQuestion}/>
+
+                <p hidden={visible}>The answer is {rightAnswer} </p>
                 <Counter countRight={countRight} countWrong={countWrong}/>
             </>
         )
